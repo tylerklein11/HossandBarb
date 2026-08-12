@@ -1525,3 +1525,128 @@ footer {
         padding: 16px;
     }
 }
+/* ==========================================
+   CLANKER EASTER EGG
+========================================== */
+
+.clanker-trigger {
+    margin-top: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    opacity: .45;
+}
+
+#clanker-link {
+    cursor: pointer;
+    user-select: none;
+}
+
+#clanker-link:hover {
+    opacity: 1;
+    color: var(--gold);
+}
+
+.clanker-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(0,0,0,.82);
+}
+
+.clanker-popup.show {
+    display: flex;
+}
+
+.clanker-box {
+    position: relative;
+
+    width: min(620px, 95%);
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    color: var(--light-cream);
+    background: var(--blue);
+
+    border: 5px solid var(--light-cream);
+
+    outline: 2px dashed var(--light-cream);
+    outline-offset: -14px;
+
+    box-shadow: 12px 12px 0 var(--ink);
+
+    transform: rotate(-1deg);
+}
+
+.clanker-warning {
+    margin-bottom: 18px;
+
+    color: var(--gold);
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.clanker-box h2 {
+    margin: 0 0 20px;
+
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: clamp(42px, 8vw, 70px);
+    line-height: .9;
+}
+
+.clanker-box p {
+    max-width: 500px;
+    margin: 14px auto;
+
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.clanker-code {
+    margin: 28px auto;
+    padding: 16px 20px;
+
+    background: var(--red);
+
+    border: 3px solid var(--light-cream);
+
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: clamp(28px, 6vw, 45px);
+    letter-spacing: 2px;
+}
+
+.clanker-box small {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.clanker-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+
+    border: 0;
+    background: transparent;
+
+    color: var(--light-cream);
+
+    font-size: 30px;
+    font-weight: 900;
+
+    cursor: pointer;
+}
