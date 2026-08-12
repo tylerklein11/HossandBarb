@@ -20,3 +20,59 @@ if (form) {
         `;
     });
 }
+/* ==========================================
+   SUPPLY LIST SIGNUP
+========================================== */
+
+const supplyForm = document.querySelector(".supply-form");
+
+if (supplyForm) {
+
+    supplyForm.addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        const button = supplyForm.querySelector(".supply-button");
+        const success = supplyForm.querySelector(".supply-success");
+
+        button.disabled = true;
+        button.textContent = "HOLD YER HORSES...";
+
+        try {
+
+            const response = await fetch(supplyForm.action, {
+                method: "POST",
+                body: new FormData(supplyForm),
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+
+                supplyForm.reset();
+
+                button.textContent = "YOU'RE ON THE LIST";
+
+                success.textContent =
+                    "WELCOME ABOARD. BARB'S GOT YOUR EMAIL.";
+
+            } else {
+
+                throw new Error("Signup failed");
+
+            }
+
+        } catch (error) {
+
+            button.disabled = false;
+            button.textContent = "TRY 'ER AGAIN";
+
+            success.textContent =
+                "WELL HELL. SOMETHING BROKE. TRY AGAIN.";
+
+        }
+
+    });
+
+}
