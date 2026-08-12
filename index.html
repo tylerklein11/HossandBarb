@@ -700,61 +700,50 @@
 
 
 
-        <form id="contact-form"
-              class="contact-form">
+<form
+    action="https://formspree.io/f/mrpzqwza"
+    method="POST"
+    class="contact-form">
 
+    <label>
+        YOUR NAME
+        <input
+            type="text"
+            name="name"
+            placeholder="Hoss, Barb, etc."
+            required>
+    </label>
 
-            <label>
+    <label>
+        YOUR EMAIL
+        <input
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            required>
+    </label>
 
-                YOUR NAME
+    <label>
+        WHAT'S ON YOUR MIND?
+        <textarea
+            name="message"
+            rows="6"
+            placeholder="Complaints, compliments, bad advice..."
+            required></textarea>
+    </label>
 
-                <input
-                    type="text"
-                    name="name"
-                    required>
+    <input
+        type="hidden"
+        name="_subject"
+        value="New message from HossAndBarb.com">
 
-            </label>
+    <button
+        type="submit"
+        class="button button-red">
+        SEND IT
+    </button>
 
-
-            <label>
-
-                EMAIL
-
-                <input
-                    type="email"
-                    name="email"
-                    required>
-
-            </label>
-
-
-            <label>
-
-                WHAT'S ON YOUR MIND?
-
-                <textarea
-                    name="message"
-                    rows="5"
-                    required></textarea>
-
-            </label>
-
-
-            <button
-                type="submit"
-                class="button button-red">
-
-                SEND IT
-
-            </button>
-
-
-            <div id="form-message"
-                 class="form-message">
-            </div>
-
-
-        </form>
+</form>
 
 
     </div>
