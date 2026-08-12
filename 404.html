@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Well Hell. You Got Lost. | Hoss & Barb Supply Co.</title>
+
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #173d50;
+            color: #f7efd9;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .top-bar {
+            padding: 12px 20px;
+            background: #a43625;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .lost-page {
+            position: relative;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 25px;
+            text-align: center;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,.06) 1px,
+                    transparent 1px
+                ),
+                #173d50;
+            background-size: 13px 13px;
+        }
+
+        .lost-page::before {
+            content: "";
+            position: absolute;
+            inset: 22px;
+            border: 3px solid #f7efd9;
+            pointer-events: none;
+        }
+
+        .lost-page::after {
+            content: "";
+            position: absolute;
+            inset: 32px;
+            border: 1px dashed rgba(247,239,217,.55);
+            pointer-events: none;
+        }
+
+        .lost-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 850px;
+        }
+
+        .error-number {
+            color: #c8a555;
+            font-family: Impact, "Arial Black", sans-serif;
+            font-size: clamp(90px, 20vw, 190px);
+            line-height: .75;
+            text-shadow: 7px 7px 0 rgba(0,0,0,.25);
+        }
+
+        h1 {
+            margin: 35px 0 5px;
+            font-family: Impact, "Arial Black", sans-serif;
+            font-size: clamp(55px, 10vw, 105px);
+            line-height: .85;
+        }
+
+        h2 {
+            margin: 10px 0 25px;
+            color: #c8a555;
+            font-family: Impact, "Arial Black", sans-serif;
+            font-size: clamp(35px, 7vw, 65px);
+            line-height: .9;
+        }
+
+        .rule {
+            width: 130px;
+            height: 5px;
+            margin: 28px auto;
+            background: #a43625;
+        }
+
+        p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 16px 28px;
+            background: #a43625;
+            color: #f7efd9;
+            border: 3px solid #161817;
+            box-shadow: 6px 6px 0 #161817;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .button:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 3px 3px 0 #161817;
+        }
+
+        .fine-print {
+            margin-top: 45px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            opacity: .7;
+        }
+
+        @media (max-width: 600px) {
+            .lost-page {
+                padding: 60px 35px;
+            }
+
+            .lost-page::before {
+                inset: 12px;
+            }
+
+            .lost-page::after {
+                inset: 19px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        HOSS &amp; BARB SUPPLY CO. • EST. 2026
+    </div>
+
+    <main class="lost-page">
+
+        <div class="lost-content">
+
+            <div class="error-number">404</div>
+
+            <h1>WELL HELL.</h1>
+
+            <h2>YOU GOT LOST.</h2>
+
+            <div class="rule"></div>
+
+            <p>
+                Whatever you were lookin' for ain't here.
+                Could've been moved. Could've never existed.
+                Could be Hoss's fault.
+            </p>
+
+            <a href="/" class="button">
+                TAKE ME BACK TO THE STORE
+            </a>
+
+            <div class="fine-print">
+                MANAGEMENT HAS BEEN NOTIFIED. MANAGEMENT DOES NOT SEEM CONCERNED.
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
