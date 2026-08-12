@@ -1,19 +1,29 @@
-const form = document.getElementById("contact-form");
+const form =
+    document.getElementById("contact-form");
+
 
 if (form) {
 
-    form.addEventListener("submit", function(event) {
+    form.addEventListener(
+        "submit",
+        function (event) {
 
-        event.preventDefault();
+            event.preventDefault();
 
-        const message =
-            document.getElementById("form-message");
 
-        message.textContent =
-            "Thanks! Your message was received by the highly sophisticated Hoss & Barb demonstration system.";
+            const message =
+                document.getElementById(
+                    "form-message"
+                );
 
-        form.reset();
 
-    });
+            message.textContent =
+                "Message received by the Hoss & Barb highly sophisticated communications department.";
+
+
+            form.reset();
+
+        }
+    );
 
 }
