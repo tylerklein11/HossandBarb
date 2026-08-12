@@ -1353,3 +1353,35 @@ footer {
         font-size: 10px;
     }
 }
+/* FINAL MOBILE HEADER TIGHTENING */
+@media (max-width: 760px) {
+
+    .site-header {
+        padding: 16px 18px 14px;
+        gap: 14px;
+    }
+
+    .brand-main {
+        font-size: 38px;
+    }
+
+    .brand-sub {
+        margin-top: 6px;
+        font-size: 9px;
+        letter-spacing: 5px;
+    }
+
+    nav {
+        gap: 10px 17px;
+        line-height: 1;
+    }
+
+    nav a {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero {
+        padding-top: 28px;
+    }
+}
