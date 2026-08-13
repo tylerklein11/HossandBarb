@@ -903,12 +903,12 @@
 
     <!-- SECRET CLANKER TRIGGER -->
 
-    <div class="clanker-trigger">
-        WEBSITE PROBLEMS?
-        <span id="clanker-link">
-            BLAME THE CLANKER.
-        </span>
-    </div>
+<div class="clanker-trigger">
+    WEBSITE PROBLEMS?
+    <span id="clanker-link" onclick="clankerTap()">
+        BLAME THE CLANKER.
+    </span>
+</div>
 
 </footer>
 
@@ -969,6 +969,56 @@
 
 <script src="https://unpkg.com/@formspree/ajax@1"></script>
 <script src="script.js"></script>
+<script>
+    let clankerCount = 0;
+    let clankerResetTimer;
 
+    function clankerTap() {
+
+        clankerCount++;
+
+        clearTimeout(clankerResetTimer);
+
+        clankerResetTimer = setTimeout(function () {
+            clankerCount = 0;
+        }, 10000);
+
+        if (clankerCount >= 5) {
+
+            const popup = document.getElementById("clanker-popup");
+
+            if (popup) {
+                popup.classList.add("show");
+                popup.setAttribute("aria-hidden", "false");
+            }
+
+            clankerCount = 0;
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const popup = document.getElementById("clanker-popup");
+        const close = document.getElementById("clanker-close");
+
+        if (close && popup) {
+            close.addEventListener("click", function () {
+                popup.classList.remove("show");
+                popup.setAttribute("aria-hidden", "true");
+            });
+        }
+
+        if (popup) {
+            popup.addEventListener("click", function (event) {
+                if (event.target === popup) {
+                    popup.classList.remove("show");
+                    popup.setAttribute("aria-hidden", "true");
+                }
+            });
+        }
+
+    });
+</script>
+    
 </body>
 </html>
