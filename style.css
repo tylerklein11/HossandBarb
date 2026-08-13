@@ -1773,3 +1773,92 @@ footer {
 
     cursor: pointer;
 }
+/* ==========================================
+   HOSS & BARB LORE EASTER EGGS
+========================================== */
+
+const lorePopup = document.getElementById("lore-popup");
+const loreClose = document.getElementById("lore-close");
+const loreTitle = document.getElementById("lore-title");
+const loreMessage = document.getElementById("lore-message");
+
+function openLore(title, message) {
+
+    if (!lorePopup) return;
+
+    loreTitle.textContent = title;
+    loreMessage.textContent = message;
+
+    lorePopup.classList.add("show");
+    lorePopup.setAttribute("aria-hidden", "false");
+}
+
+function makeClickEgg(id, clicksNeeded, title, message) {
+
+    const element = document.getElementById(id);
+
+    if (!element) return;
+
+    let count = 0;
+    let resetTimer;
+
+    element.addEventListener("click", function () {
+
+        count++;
+
+        clearTimeout(resetTimer);
+
+        resetTimer = setTimeout(function () {
+            count = 0;
+        }, 8000);
+
+        if (count >= clicksNeeded) {
+
+            openLore(title, message);
+
+            count = 0;
+        }
+    });
+}
+
+makeClickEgg(
+    "truck-egg",
+    7,
+    "TRUCK DEPARTMENT NOTICE",
+    "Hoss has declared this truck 'basically stock.' Management disputes this characterization."
+);
+
+makeClickEgg(
+    "est-egg",
+    4,
+    "HISTORICAL RECORDS",
+    "Hoss & Barb Supply Co. has proudly been pretending to have decades of history since 2026."
+);
+
+makeClickEgg(
+    "quality-egg",
+    6,
+    "QUALITY CONTROL REPORT",
+    "Barb says it's quality. Hoss says send it. The Clanker has been advised not to ask follow-up questions."
+);
+
+if (loreClose && lorePopup) {
+
+    loreClose.addEventListener("click", function () {
+
+        lorePopup.classList.remove("show");
+        lorePopup.setAttribute("aria-hidden", "true");
+    });
+}
+
+if (lorePopup) {
+
+    lorePopup.addEventListener("click", function (event) {
+
+        if (event.target === lorePopup) {
+
+            lorePopup.classList.remove("show");
+            lorePopup.setAttribute("aria-hidden", "true");
+        }
+    });
+}
